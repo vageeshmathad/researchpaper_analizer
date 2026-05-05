@@ -1,65 +1,64 @@
 # AI Research Synthesizer with Conflict Mapping
 
-## Overview
-This project presents an AI-based system designed to analyze multiple research papers and identify relationships between them. It focuses on detecting agreement, contradiction, and neutrality across research findings, enabling faster and more structured understanding of academic content.
-
-The system uses natural language processing and transformer-based models to perform semantic comparison between research texts.
+## Problem Statement
+Build an AI system that ingests multiple research PDFs, synthesizes a structured literature review, identifies cross-paper agreements and contradictions, visualizes citation relationships as a graph, and supports interactive cross-paper Q&A.
 
 ---
 
-## Problem Statement
-Analyzing multiple research papers is time-consuming and complex. Researchers often struggle to:
-- Compare findings across papers
-- Identify agreements and contradictions
-- Extract meaningful insights efficiently
-
-This results in increased effort, redundancy, and missed knowledge.
+## Overview
+This project presents an AI-based system designed to analyze multiple research papers and extract meaningful insights. It enables users to understand relationships between papers, identify agreements and contradictions, and explore research knowledge in a structured way.
 
 ---
 
 ## Proposed Solution
-We propose an AI-driven system that:
-- Processes research papers (text/PDF)
-- Understands semantic meaning using embeddings
-- Detects relationships between papers (agreement, contradiction, neutral)
-- Generates structured insights for easier analysis
+The system performs:
+- Multi-paper ingestion and understanding
+- Conflict and consensus detection across research papers
+- Structured literature review generation
+- Graph-based visualization of relationships
+- Interactive question-answering across papers
 
 ---
 
 ## Core Concept
-Text → NLP → Embedding → Comparison → Insight Extraction
+Text → NLP → Embedding → Comparison → Knowledge Extraction
 
 ---
 
 ## Key Features
-- Multi-paper analysis
-- Conflict detection (AGREE / CONTRADICT / NEUTRAL)
-- Semantic understanding using embeddings
-- Scalable AI-based pipeline
-- Notebook-based interactive demonstration
+- Multi-paper ingestion and analysis
+- Consensus and conflict detection (agreement, contradiction, neutral)
+- Structured literature review generation
+- Cross-paper question answering
+- Graph visualization of paper relationships
 
 ---
 
 ## Methodology
 
-### 1. Data Processing
-- Input research text is cleaned and preprocessed
-- Text is prepared for model input
+### Data Processing
+- Extract text from research papers (PDF/text)
+- Clean and preprocess content for analysis
 
-### 2. Embedding Generation
-- Text is converted into vector representations
-- Captures semantic meaning instead of keyword matching
+### Embedding Generation
+- Convert text into vector representations using SciBERT
+- Capture semantic meaning of research content
 
-### 3. Conflict Detection
-- A transformer-based model (SciBERT) is used
-- Classifies relationships into:
-  - AGREE
-  - CONTRADICT
-  - NEUTRAL
+### Conflict Detection
+- Use transformer-based classification model
+- Identify:
+  - Agreement
+  - Contradiction
+  - Neutral relationships
 
-### 4. Output Generation
-- Results are presented as structured insights
-- Enables comparison across papers
+### Graph Construction
+- Represent papers as nodes
+- Represent relationships as edges
+- Enable visualization of research connections
+
+### Insight Generation
+- Provide structured outputs and analysis
+- Enable user interaction through Q&A
 
 ---
 
@@ -70,29 +69,23 @@ Text → NLP → Embedding → Comparison → Insight Extraction
 - SciBERT (allenai/scibert_scivocab_uncased)
 - HuggingFace Datasets
 - Scikit-learn
-- Pandas / NumPy
+- NetworkX
 
 ---
 
 ## Dataset
 The model is trained using:
+- MultiNLI (Natural Language Inference dataset)
+- SciTail (Scientific textual inference dataset)
 
-### MultiNLI
-- Natural Language Inference dataset
-- Provides general understanding of sentence relationships
-
-### SciTail
-- Scientific textual inference dataset
-- Improves performance on research-oriented content
-
-Note: These datasets are used specifically for training the conflict detection module.
+These datasets are used specifically for training the conflict detection module.
 
 ---
 
 ## Model Details
 - Model: SciBERT
 - Task: Sequence Classification
-- Classes:
+- Output Classes:
   - AGREE
   - CONTRADICT
   - NEUTRAL
@@ -100,21 +93,27 @@ Note: These datasets are used specifically for training the conflict detection m
 ---
 
 ## Performance
-- Conflict Detection Accuracy: approximately 90–95%
-- Performance improves with larger datasets and GPU training
-- Balanced dataset ensures better generalization
+- Conflict Detection Accuracy: ~90–95%
+- Performance improves with larger datasets and GPU-based training
+- Balanced datasets improve generalization
 
 ---
 
-## Example
-
-Input:
-Paper 1: Transformer models achieve high accuracy  
-Paper 2: BERT performs well on NLP tasks  
-
-Output:
-AGREE
+## Limitations
+- Depends on dataset quality
+- Complex scientific language may reduce accuracy
+- Full system integration is still evolving
 
 ---
 
-## Project Structure
+## Future Scope
+- Enhance literature review generation
+- Improve graph visualization
+- Add real-time collaboration features
+- Extend Q&A capabilities using advanced LLMs
+- Deploy as a full-stack web application
+
+---
+
+## Conclusion
+This system simplifies research analysis by using AI to identify relationships between research papers, enabling faster and more efficient knowledge discovery.
