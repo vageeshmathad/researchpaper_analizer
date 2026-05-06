@@ -1,4 +1,4 @@
-
+# AI Research Synthesizer with Conflict Mapping  
 
 "Don't read 100 papers. Understand all of them in minutes."
 
