@@ -1,5 +1,4 @@
-# AI Research Synthesizer with Conflict Mapping  
-Dev Delight Hack 2025 | Team Stack  
+
 
 "Don't read 100 papers. Understand all of them in minutes."
 
