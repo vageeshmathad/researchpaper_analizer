@@ -31,16 +31,6 @@ This project presents an AI system that analyzes multiple research papers and de
 - Semantic understanding using embeddings (SciBERT)  
 - Pairwise relationship classification (AGREE / CONTRADICT / NEUTRAL)  
 
-### Example:
-- Paper A: "Transformers outperform RNNs on NLI tasks"  
-- Paper B: "LSTMs remain competitive on domain-specific NLI"  
-→ CONTRADICT (~88%)
-
-- Paper A: "BERT achieves 86.7% on MultiNLI"  
-- Paper B: "RoBERTa achieves 90.8% on MultiNLI"  
-→ AGREE (~94%)
-
----
 
 ## Dataset  
 - Total records: 460,000+  
