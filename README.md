@@ -1,116 +1,152 @@
-AI Research Synthesizer with Conflict Mapping
-Dev Delight Hack 2025 | Team Stack
+# AI Research Synthesizer with Conflict Mapping  
+Dev Delight Hack 2025 | Team Stack  
 
 "Don't read 100 papers. Understand all of them in minutes."
 
-Live Demo
-https://data-flow-hub--kapalikhushi8.replit.app
-Problem Statement
-Every research cycle, hundreds of papers are published on overlapping topics. Current systems are manual and respond only after researchers have spent weeks reading. There is no widely used AI-based system that automatically maps agreements and contradictions across research papers.
+---
+
+## Live Demo  
+https://data-flow-hub--kapalikhushi8.replit.app  
+
+---
+
+## Problem Statement  
+Every research cycle, hundreds of papers are published on overlapping topics. Current systems are manual and require researchers to spend weeks reading and comparing papers.
+
+There is no widely used AI system that automatically identifies agreements and contradictions across research work.
+
 This is important because:
 
-A large portion of research time is spent just reading and organizing papers
-Contradictions between published studies go undetected and mislead future work
-Institutions lack AI-driven tools to prioritize and connect knowledge
-Delayed insight discovery leads to redundant or flawed research
+- A large portion of research time is spent reading and organizing papers  
+- Contradictions between studies often go unnoticed  
+- Institutions lack AI-driven tools for knowledge mapping  
+- Delayed insights lead to redundant or flawed research  
 
-Solution
-This project presents an AI system that detects relationships across research papers using three key inputs:
+---
 
-Uploaded research PDFs (text extraction)
-Semantic embeddings (SciBERT)
-Pairwise relationship classification (AGREE / CONTRADICT / NEUTRAL)
+## Solution  
+This project presents an AI system that analyzes multiple research papers and detects relationships between them using:
 
-Example:
+- Research PDF ingestion and text extraction  
+- Semantic understanding using embeddings (SciBERT)  
+- Pairwise relationship classification (AGREE / CONTRADICT / NEUTRAL)  
 
-Paper A: "Transformers outperform RNNs on NLI tasks" + Paper B: "LSTMs remain competitive on domain-specific NLI" → CONTRADICT (~88% confidence)
-Paper A: "BERT achieves 86.7% on MultiNLI" + Paper B: "RoBERTa achieves 90.8% on MultiNLI" → AGREE (~94% confidence)
+### Example:
+- Paper A: "Transformers outperform RNNs on NLI tasks"  
+- Paper B: "LSTMs remain competitive on domain-specific NLI"  
+→ CONTRADICT (~88%)
 
-Dataset
+- Paper A: "BERT achieves 86.7% on MultiNLI"  
+- Paper B: "RoBERTa achieves 90.8% on MultiNLI"  
+→ AGREE (~94%)
 
-Total records: 460,000+
-Datasets: MultiNLI, SciTail
-Target variable:
+---
 
-AGREE = papers support same finding
-CONTRADICT = papers make opposing claims
-NEUTRAL = papers are independent
+## Dataset  
+- Total records: 460,000+  
+- Datasets: MultiNLI, SciTail  
 
+### Target Variable:
+- AGREE → Same findings  
+- CONTRADICT → Opposite claims  
+- NEUTRAL → Independent  
 
+### Features Used:
+- Sentence pairs from research papers  
+- Domain/genre (fiction, government, telephone, travel, slate)  
+- Annotator confidence labels  
 
-Features used:
+---
 
-sentence pairs from research papers
-domain genre (fiction, government, telephone, travel, slate)
-annotator confidence labels
-
-Model
+## Model  
 A SciBERT Sequence Classifier is used for conflict detection.
-Configuration:
 
-Model: allenai/scibert_scivocab_uncased
-Task: Sequence Classification
-Output classes: AGREE · CONTRADICT · NEUTRAL
+### Configuration:
+- Model: allenai/scibert_scivocab_uncased  
+- Task: Sequence Classification  
+- Classes: AGREE · CONTRADICT · NEUTRAL  
 
-Performance:
+### Performance:
+- Accuracy: ~90–95%  
+- Inter-annotator agreement: 88.7%  
+- Balanced precision and recall  
 
-Accuracy: ~90–95%
-Inter-annotator agreement: 88.7%
-Precision / Recall: balanced across all three classes
+---
 
-Features
+## Features  
+- User-friendly web interface  
+- Multi-PDF upload and processing  
+- Instant conflict and consensus detection  
+- Confidence scoring for every relationship  
+- Citation graph visualization (support / contradict / neutral edges)  
+- Interactive cross-paper Q&A  
+- Key sentence highlighting for interpretability  
 
-User-friendly web interface
-Multi-PDF upload and processing
-Instant conflict and consensus detection
-Confidence scoring for every relationship
-Citation graph visualization (support / contradict / neutral edges)
-Interactive cross-paper Q&A
-Key sentence highlighting for interpretability
+---
 
-Tech Stack
+## Tech Stack  
+- Python  
+- PyTorch  
+- HuggingFace Transformers, SciBERT  
+- Scikit-learn, NetworkX  
+- Next.js / React  
+- FastAPI  
+- MongoDB Atlas  
+- Replit (deployment)  
 
-Python
-PyTorch
-HuggingFace Transformers, SciBERT
-Scikit-learn, NetworkX
-Next.js, FastAPI
-MongoDB Atlas
-Replit (deployment)
+---
 
-How to Run
+## How to Run  
 
-Clone the repository: git clone https://github.com/YOUR_USERNAME/ai-research-synthesizer.git
-Install dependencies: pip install -r requirements.txt
-Set environment variables: MONGO_URI and NEXT_PUBLIC_API_URL
-Run backend: uvicorn main:app --reload
-Run frontend: npm run dev
+Clone the repository:  
+git clone https://github.com/YOUR_USERNAME/ai-research-synthesizer.git  
 
-Impact
+Install dependencies:  
+pip install -r requirements.txt  
 
-Helps researchers identify contradicting studies before building on flawed foundations
-Supports institutions in mapping knowledge gaps across disciplines
-Gives analysts the ability to understand large paper corpora in minutes
-Assists journals in detecting inconsistencies across submissions
+Set environment variables:  
+MONGO_URI  
+NEXT_PUBLIC_API_URL  
 
-Future Scope
+Run backend:  
+uvicorn main:app --reload  
 
-Integration with real-time Arxiv and PubMed APIs
-Interactive graph visualization with zoom and filters
-LLM-powered Q&A using GPT or Llama
-Automated conflict alert system for newly published papers
-Multilingual support using multilingual BERT
+Run frontend:  
+npm run dev  
 
-Limitations
+---
 
-Depends on dataset quality
-Complex scientific language may reduce accuracy
-Requires manual PDF upload
-Full system integration is still evolving
+## Impact  
 
-Team
-Team Stack
+- Helps researchers detect contradicting studies before building on flawed foundations  
+- Enables faster literature review and knowledge synthesis  
+- Supports institutions in mapping knowledge gaps across disciplines  
+- Reduces time spent on manual paper comparison  
 
-Mehak Sayed
-Vageesh S M
-Khushi Kapali
+---
+
+## Future Scope  
+
+- Integration with real-time Arxiv and PubMed APIs  
+- Interactive graph visualization with zoom and filters  
+- LLM-powered Q&A using GPT or LLaMA  
+- Automated conflict alert system for newly published papers  
+- Multilingual support using multilingual BERT  
+
+---
+
+## Limitations  
+
+- Depends on dataset quality  
+- Complex scientific language may reduce accuracy  
+- Requires manual PDF upload  
+- Full system integration is still evolving  
+
+---
+
+## Team  
+Team Stack  
+
+Mehak Sayed  
+Vageesh S M  
+Khushi Kapali  
