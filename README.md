@@ -96,25 +96,7 @@ A SciBERT Sequence Classifier is used for conflict detection.
 
 ---
 
-## How to Run  
 
-Clone the repository:  
-git clone https://github.com/YOUR_USERNAME/ai-research-synthesizer.git  
-
-Install dependencies:  
-pip install -r requirements.txt  
-
-Set environment variables:  
-MONGO_URI  
-NEXT_PUBLIC_API_URL  
-
-Run backend:  
-uvicorn main:app --reload  
-
-Run frontend:  
-npm run dev  
-
----
 
 ## Impact  
 
